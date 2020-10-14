@@ -26,7 +26,8 @@
         "aura/sql": "~2.",
         "jakeasmith/http_build_url": "1.0.1",
         "symfony/polyfill-mbstring": "1.15.0",
-        "symfony/polyfill-intl-idn": "^1.17"
+        "symfony/polyfill-intl-idn": "^1.17",
+        "yourls/composer-installer": "^1.1"
     },
     "config": {
         "vendor-dir": "includes/vendor"
@@ -39,6 +40,15 @@
     "suggest": {
         "ext-mbstring": "For best performance",
         "ext-curl": "Required for API usage"
+    },
+    "extra": {
+        "merge-plugin": {
+            "include": ["user/composer.json"]
+        },
+        "thanks": {
+            "name": "yourls/yourls",
+            "url": "https://github.com/yourls/yourls"
+        }
     },
     "scripts": {
         "post-update-cmd": "bash ./includes/vendor/build-script/yourls-build.sh ./includes/vendor"
